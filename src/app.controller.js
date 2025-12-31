@@ -11,8 +11,9 @@ export const bootstap = (app , express) => {
     connectDB();
     app.use("/auth", authcontroller)
     app.use("/user" , usercontrolerr)
-    app.use(globalerror)
+    
     app.use("/admin", admincontroller )
+    app.use(globalerror)
 
 }
 
