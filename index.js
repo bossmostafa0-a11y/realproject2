@@ -14,7 +14,7 @@ const port = process.env.PORT||3000
 
 console.log("Email:", process.env.EMAIL);
 console.log("Password exists?", !!process.env.EMAIL_PASSWORD);
-bootstap(app ,express)
+await bootstap(app ,express)
 
 
 
