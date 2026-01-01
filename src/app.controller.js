@@ -8,6 +8,7 @@ import admincontroller from "./modules/admin/admin.controller.js"
 
 export const bootstap = (app , express) => {
     app.use(express.json())
+    app.use(express.urlencoded({ extended: true }));
     connectDB();
     app.use("/auth", authcontroller)
     app.use("/user" , usercontrolerr)
