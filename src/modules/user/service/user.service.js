@@ -159,7 +159,7 @@ export const updateUserProfile = asyncHandelr(async (req, res, next) => {
 });
 
 
-export const  getpageservice = (async (req, res, next) =>{
+export const  getpageservice =asyncHandelr(async (req, res, next) =>{
     const {id} = req.body
     if (!id) {
           return res.status(400).json({
