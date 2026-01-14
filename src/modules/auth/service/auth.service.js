@@ -54,7 +54,7 @@ export const verifyOtp = asyncHandelr(async (req, res, next) => {
 
   const user = await usermodels.findOne({ email });
 
-  if (!user) return next(new Error("المستخدم غير موجود", { cause: 404 }));
+  if (!user) return next(new Error("المستخدم غير موجود", { cause: 400 }));
 
   if (!user.otp || !user.otpTime) {
     return next(new Error("لم يتم إرسال OTP", { cause: 400 }));
@@ -104,7 +104,7 @@ export const signup = asyncHandelr(async (req, res, next) => {
   });
 
   if (isUserExist) {
-    return next(new Error("الإيميل أو رقم الهاتف مستخدم بالفعل", { cause: 409 }));
+    return next(new Error("الإيميل أو رقم الهاتف مستخدم بالفعل", { cause: 400 }));
   }
 
  
